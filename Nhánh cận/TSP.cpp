@@ -3,20 +3,6 @@ typedef struct{
     float dodai;
     int dau, cuoi;
 }canh;
-void swap(canh *a, canh *b){
-    canh temp = *a;
-    *a = *b;
-    *b = temp;
-}
-void sort(canh *a, int n){
-    for(int i = 0; i < n; i++){
-        for(int j = n - 1; j > i; j--){
-            if(a[j].dodai > a[j-1].dodai){
-                swap(&a[j], &a[j-1]);
-            }
-        }
-    }
-}
 void docfile(canh a[][100], int *n){
     FILE *f = fopen("TSP.txt", "r");
     fscanf(f, "%d", n);
